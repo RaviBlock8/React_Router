@@ -8,12 +8,20 @@ import {BrowserRouter as Router,Switch,Route} from 'react-router-dom'
 
 function App() {
   return (
+    //everything that uses route functionality need to be put under this tag
+    //what switch does is as soon as it matches first url it stops
     <Router>
       <div className="App">
 
       <Nav></Nav>
-      <Route path="/about" component={About}/>
-      <Route path="/shop" component={Shop}/>
+      
+      <Switch>
+        <Route path="/" exact component={Home}/>
+        <Route path="/about" exact component={About}/>
+        <Route path="/shop" exact component={Shop}/>
+
+      </Switch>
+      
     </div>
 
     </Router>
@@ -21,4 +29,9 @@ function App() {
   );
 }
 
+function Home(){
+  return(
+    <div className="home">Home Page</div>
+  )
+}
 export default App;
