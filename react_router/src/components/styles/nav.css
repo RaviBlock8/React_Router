@@ -26,10 +26,18 @@ li{
     background:#000000;
     color:white;
     transition:box-shadow 500ms;
+    transition:background 500ms;
     
 }
 
 li:hover{
     box-shadow:5px 5px 12px rgb(230, 224, 224);
+    background: rgb(224, 222, 222);
+    color:black;
+}
+
+a{
+    color:white;
+    text-decoration:none;
 }
 
