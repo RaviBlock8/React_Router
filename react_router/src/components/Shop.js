@@ -9,7 +9,8 @@ function Shop() {
    
     const fetchData=async ()=>{
         const data=await fetch('https://jsonplaceholder.typicode.com/users')
-        items=await data.json()
+        //how to get this data outside this function
+        const items=await data.json()
         // console.log(items)
         
     }
