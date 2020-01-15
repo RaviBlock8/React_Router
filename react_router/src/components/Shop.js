@@ -14,12 +14,14 @@ function Shop() {
         // console.log(items)
         
     }
+    //this is an hook that i have to study about
     useEffect(()=>{
         fetchData()
     },[])
     
   return (
       <div>
+          <h1>Shop</h1>
           {/* {items.map((item)=>{
           return(<h1 key={item.id}>{item.name}</h1>)
           })} */}
