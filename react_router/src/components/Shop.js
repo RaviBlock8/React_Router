@@ -15,9 +15,9 @@ function Shop() {
         
     }
     //this is an hook that i have to study about
-    useEffect(()=>{
-        fetchData()
-    },[])
+    // useEffect(()=>{
+    //     fetchData()
+    // },[])
     
   return (
       <div>
