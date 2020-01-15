@@ -19,7 +19,7 @@ class ShopC extends Component {
     render() {
         const user_elemnt=this.state.users.map((user)=>{
         return (
-            <div key={user.id}>
+            <div key={user.id} className="container" style={cstyle}>
                 
                     <p><strong>Name:</strong>{user.name}</p>
                     <p><strong>Username:</strong>{user.username}</p>
@@ -41,6 +41,12 @@ class ShopC extends Component {
 
 const SCstyle={
     padding:'1rem'
+}
+
+const cstyle={
+    background:'#ebedeb',
+    padding:'1rem',
+    marginBottom:'10px'
 }
 
 export default ShopC
