@@ -1,3 +1,6 @@
+//This module is ignored
+
+
 import React,{useState,useEffect} from 'react';
 import './styles/nav.css'
 
@@ -7,24 +10,30 @@ function Shop() {
 
     
    
-    const fetchData=async ()=>{
-        const data=await fetch('https://jsonplaceholder.typicode.com/users')
-        //how to get this data outside this function
-        const items=await data.json()
-        // console.log(items)
-        
-    }
-    //this is an hook that i have to study about
-    // useEffect(()=>{
-    //     fetchData()
-    // },[])
     
+    let [users,setUsers]=useState([])
+    useEffect(()=>{
+        fetch('https://jsonplaceholder.typicode.com/users')
+        .then((res)=>res.json())
+        .then((data)=>{
+            setUsers(users=data)
+        })
+    })
+    const user_elemnt=users.map((user)=>{
+        return (
+            <div key={user.id} className="container" >
+                
+                    <p><strong>Name:</strong>{user.name}</p>
+                    <p><strong>Username:</strong>{user.username}</p>
+                    <p><strong>Email:</strong>{user.email}</p>
+                
+            </div>
+        )
+        })
   return (
       <div>
           <h1>Shop</h1>
-          {/* {items.map((item)=>{
-          return(<h1 key={item.id}>{item.name}</h1>)
-          })} */}
+          {user_elemnt}
       </div>
     
         
